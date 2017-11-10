@@ -1,4 +1,3 @@
-/*check*/
 // color상수 지정
 #define BLACK 0
 #define BLUE 1
