@@ -7,7 +7,9 @@ void calandar(int year,int month)
     int days = 0;
     int first_date = 0;
     int cnt = 0;
+    int year, month;
 
+    scanf("%d %d",&year,&month);
     days = (year-1) * 365 + (year-1) / 4 - (year-1) / 100 + (year-1) / 400;
     
     for(int i = 0; i < month - 1; i++)
@@ -15,16 +17,16 @@ void calandar(int year,int month)
 	if(i==1)
 	{
 	    if((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) //윤년
-		days[1] = 29;
+		day[1] = 29;
 	    else
-		days[1] = 28;
+		day[1] = 28;
 	}
 	days += day[i];
     }
 
 
     /* 제목 출력 */
-    printf("\n\t  %d년  %d월\n", year, month);
+    printf("\n\t %d년  %d월\n", year, month);
     printf("\t==============\n");
     printf("-----------------------------\n");
     printf(" SUN MON TUE WED THU FRI SAT \n");
@@ -35,13 +37,13 @@ void calandar(int year,int month)
     first_date = days % 7;
 
     // 1년 1월 1일은 월요일 (시작은 일요일부터)
-    for(int i = 0; i <= first_data; i++)
+    for(int i = 0; i <= first_date; i++)
     {
-	printf("\t");
+	printf("    ");
 	cnt++;
     } 
 
-    for(int i = 0; i <= day[month - 1]; i++)
+    for(int i = 1; i <= day[month - 1]; i++)
     {
 	if(cnt % 7 == 0)
 	    printf("\n");
@@ -51,5 +53,5 @@ void calandar(int year,int month)
     }
 
     printf("\n\n");
-    return;
+    return 0;
 }
