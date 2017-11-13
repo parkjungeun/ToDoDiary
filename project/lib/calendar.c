@@ -6,10 +6,7 @@ void calandar(int year,int month)
     int day[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     int days = 0;
     int first_date = 0;
-    int cnt = 0;
-    int year, month;
 
-    scanf("%d %d",&year,&month);
     days = (year-1) * 365 + (year-1) / 4 - (year-1) / 100 + (year-1) / 400;
     
     for(int i = 0; i < month - 1; i++)
@@ -53,5 +50,5 @@ void calandar(int year,int month)
     }
 
     printf("\n\n");
-    return 0;
+    return;
 }
