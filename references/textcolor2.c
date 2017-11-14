@@ -1,7 +1,7 @@
-//#include <stdio.h>
-//#include <conio.h>
-//#include <stdlib.h>
-//#include <time.h>
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+#include <time.h>
 #include <Windows.h>
 
 void setColor(unsigned short text,unsigned short back){
