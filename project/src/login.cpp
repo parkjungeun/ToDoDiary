@@ -20,7 +20,11 @@ int main(int argc,char *argv[]){
             chmod();
          }
       }
+      else
+         cout<<"wrong password"<<endl;
    }
+  else
+   cout<<"wrong password"<<endl;
 
 
    return 0;
