@@ -1,10 +1,9 @@
 #include<stdio.h>
 #include"calendar.h"
 
-void calandar(int year,int month)
-{
+void calandar(int year,int month){
     int day[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-    int days = 0;
+    int days = 0,cnt=0;
     int first_date = 0;
 
     days = (year-1) * 365 + (year-1) / 4 - (year-1) / 100 + (year-1) / 400;
@@ -44,8 +43,11 @@ void calandar(int year,int month)
     {
 	if(cnt % 7 == 0)
 	    printf("\n");
+	char num[10];
 
-	printf("%4d",i);
+	sprintf(num,"%d",i); // int -> string
+
+	printf("%4s",num);
 	cnt++;
     }
 
