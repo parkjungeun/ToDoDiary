@@ -1,6 +1,19 @@
 #include<stdio.h>
 #include"calendar.h"
 
+// colorNum 1 Red
+// colorNum 0 Blue
+void textColorSet(char *c,int colorNum) {
+
+        if(colorNum==0){
+        	printf("\033[%dm%4s\033[0m",94, c);
+	}
+	else if(colorNum==1){
+		printf("\033[%dm%4s\033[0m",91,c);
+	}
+	return;
+}
+
 void calandar(int year,int month){
     int day[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     int days = 0,cnt=0;
