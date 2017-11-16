@@ -4,6 +4,3 @@ calendar.o : calendar.c
 	gcc -c -I../include calendar.c -o calendar.o
 menstruation.o : menstruation.c
 	gcc -c -I../include menstruation.c -o menstruation.o
-
-#textColorSet.o : textColorSet.c
-#	gcc -c -I../include textColorSet.c -o textColorSet.o
