@@ -46,8 +46,16 @@ void calandar(int year,int month){
 	char num[10];
 
 	sprintf(num,"%d",i); // int -> string
-
-	printf("%4s",num);
+	
+	if(cnt%7==0){
+		textColorSet(num,0);
+	}
+	else if(cnt%7==6){
+		textColorSet(num,1);
+	}
+	else{
+		printf("%4s",num);
+	}
 	cnt++;
     }
 

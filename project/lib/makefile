@@ -1,6 +1,9 @@
-liblibrary.a : calendar.o textColorSet.o
-	ar rv liblibrary.a calendar.o textColorSet.o
+liblibrary.a : calendar.o menstruation.o
+	ar rv liblibrary.a calendar.o menstruation.o
 calendar.o : calendar.c
 	gcc -c -I../include calendar.c -o calendar.o
-textColorSet.o : textColorSet.c
-	gcc -c -I../include textColorSet.c -o textColorSet.o
+menstruation.o : menstruation.c
+	gcc -c -I../include menstruation.c -o menstruation.o
+
+#textColorSet.o : textColorSet.c
+#	gcc -c -I../include textColorSet.c -o textColorSet.o
