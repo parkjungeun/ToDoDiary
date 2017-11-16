@@ -36,17 +36,17 @@ int main()
 		case 3:
 		    printf("날짜와 일정을 입력하시오 : ");
 		    scanf("%s %s",&day, &plan);
-		    //input();		break;
+		    //input(day, plan);		break;
 		case 4:
 		    printf("반복되는 날짜와 일정을 입력하시오 : ");
 		    scanf("%s %s",&re_day, &re_plan);
-		    //recurringEvent();	break;
+		    //recurringEvent(re_day, re_plan);	break;
 		case 5:
 		    printf("월경일을 입력하시오 (월 일) : ");
 		    scanf("%d %d",&Men_month, &Men_day);
-		    //Menstruation();	break;
+		    //Menstruation(Men_month, Men_day);	break;
 		case 6:
-		    return 0;gcc -
+		    return 0;
 		default:
 		    break;
 	    }
