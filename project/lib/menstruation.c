@@ -6,7 +6,7 @@ void menstruation(char* Men, int period)
 {
     int days[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
-    int s = atoi(Men);
+    int s = atoi(Men);  //string -> int
     int year = s / 10000;
     int month = (s - year*10000) / 100;
     int day =  (s - year*10000 - month*100);

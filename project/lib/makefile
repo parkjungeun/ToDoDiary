@@ -1,6 +1,11 @@
-liblibrary.a : calendar.o menstruation.o
-	ar rv liblibrary.a calendar.o menstruation.o
+liblibrary.a : calendar.o menstruation.o input.o
+	ar rv liblibrary.a calendar.o menstruation.o input.o
+
 calendar.o : calendar.c
 	gcc -c -I../include calendar.c -o calendar.o
+
 menstruation.o : menstruation.c
 	gcc -c -I../include menstruation.c -o menstruation.o
+
+input.o : input.c
+	gcc -c -I../include input.c -o input.o
