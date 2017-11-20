@@ -5,7 +5,7 @@ int main()
     int request=0, res=0;		//선택지 선택, 로그인 성공여부 
     int year, month;			//달력의 년,월 입력받는 변수 
     char day[50], plan[50];		//일정저장할때 사용하는 변수 
-    char re_day[50], re_plan[50];	//반복되는 일정 저장할때 사용하는 변수 
+    char re_day[50], re_plan[50], n;	//반복되는 일정 저장할때 사용하는 변수 
     int Men_month, Men_day;		//월경일 계산할 때 필요한 변수 
 
    //res = login();
@@ -41,10 +41,10 @@ int main()
 		    input(day, plan);	
 		    fflush(day);  fflush(plan);		break;
 		case 4:
-		    printf("반복되는 날짜와 일정을 입력하시오 : ");
-		    scanf("%s %s",&re_day, &re_plan);
+		    printf("반복되는 날짜와 일정 반복 년수를 입력하시오 : ");
+		    scanf("%s %s %d",&re_day, &re_plan, &n);
 
-		    //recurringEvent(re_day, re_plan);	
+		    anniversary(re_day, re_plan, &n);	
 		    fflush(day);  fflush(plan);		break;
 		case 5:
 		    printf("월경일을 입력하시오 (월 일) : ");
