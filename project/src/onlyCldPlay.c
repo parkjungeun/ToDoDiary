@@ -20,11 +20,19 @@ int main(){
 	 //left  a
          if(key==97){
 	    month--;
+	    if(month<1){
+		year--;
+		month=12;
+	    }
             calendar(year,month);
          }
 	 //right d
          else if(key==100){
 	    month++;
+	    if(month>12){
+		year++;
+		month=1;
+	    }
 	    calendar(year,month);
          }
 	 //exit q
