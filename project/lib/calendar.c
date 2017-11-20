@@ -14,7 +14,7 @@ void textColorSet(char *c,int colorNum) {
 	return;
 }
 
-void calandar(int year,int month)
+void calendar(int year,int month)
 {
     int day[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     int days = 0, cnt=0; 
