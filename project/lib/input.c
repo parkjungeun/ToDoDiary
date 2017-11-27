@@ -10,6 +10,7 @@
 void input(char* day, char* plan)
 {
     int fd;
+    char ch;
     fd = open("plan.txt", O_WRONLY | O_CREAT | O_APPEND, 0666);
 
     if( fd == -1 )  //open failure
@@ -25,7 +26,14 @@ void input(char* day, char* plan)
 	write(fd, plan, strlen(plan));
 	write(fd, "\n", 1);
 	close(fd);
-	printf("일정 저장 성공!\n");
+	printf("\t\t일정 저장 성공!\n");
+
+	do
+	{
+	    fflush(stdin);
+	    printf("\n\t\t나가기 (press y) : ");
+	    scanf("%c", &ch);
+	}while(ch!='y');
     }
     return;
 }

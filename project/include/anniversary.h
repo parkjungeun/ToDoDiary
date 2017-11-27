@@ -1,1 +1,6 @@
-void anniversary(char* day, char* plan, int num);
+#ifndef ANNIVERSARY_H
+#define ANNIVERSARY_H
+
+void anniversary(char* , char* , int );
+
+#endif

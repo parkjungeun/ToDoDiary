@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
 #include "menstruation.h"
 
 void menstruation(char* Men, int period)
@@ -13,11 +14,11 @@ void menstruation(char* Men, int period)
     
     if(year > 10000 || month > 13 || day > days[month-1])
     {
-	printf("날짜를 올바르게 입력하시오.\n");
+	printf("\t\t날짜를 올바르게 입력하시오.\n");
 	return ;
     }
 
-    printf("월경 시작일 : %d년 %d월 %d일\n", year, month, day);
+    printf("\t\t월경 시작일 : %d년 %d월 %d일\n", year, month, day);
 
     if((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) //윤년
 	days[1] = 29;
@@ -43,13 +44,22 @@ void menstruation(char* Men, int period)
 	    month=1;
 	    year+=1;
 	}
-	printf("다음 월경 예정일 :  %d년 %d월 %d일\n", year, month, day);
+	printf("\n\t\t다음 월경 예정일 :  %d년 %d월 %d일\n", year, month, day);
     }
     else 
     {
 	day = day + period;
-	printf("다음 월경 예정일 : %d년 %d월 %d일\n", year, month, day);
+	printf("\n\t\t다음 월경 예정일 : %d년 %d월 %d일\n", year, month, day);
     }
+
+    char ch;
+    do
+    {
+	fflush(stdin);
+	printf("\n\t\t나가기 (press y) : ");
+	scanf("%c", &ch);
+    }while(ch!='y');
+    
     return;
 }
 

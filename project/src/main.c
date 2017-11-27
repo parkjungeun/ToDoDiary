@@ -8,13 +8,9 @@ int main()
     char day[50], plan[50];		//일정저장할때 사용하는 변수 
     char re_day[50], re_plan[50], n;	//반복되는 일정 저장할때 사용하는 변수 
     char Men[10];
-    int  Men_day;		//월경일 계산할 때 필요한 변수 
-    char pw[10];			//password
+    int  period;		//월경일 계산할 때 필요한 변수 
     
-
-    printf("\t\tDIARY PASSWORD : ");
-    scanf("%s",pw);
-    res = login(pw);
+    res = login();
 
     if( res == 1 )
     {
@@ -37,34 +33,40 @@ int main()
 	    switch(request)
 	    {
 		case 1:	
-		    printf("년 월을 입력하시오 : ");
-		    scanf("%d %d",&year,&month);
-		    calendar(year,month);		break;
+		    printf("\t\t년 월을 입력하시오 : ");
+		    scanf("%d %d", &year,&month);
+		    calendar(year, month);			
+		    break;
 		case 2:
-		    //printf("일정을 보고 싶은 년도와 달을 선택하시오 : ");
+		    //printf("\t    일정을 보고 싶은 년도와 달을 선택하시오 : ");
 		    //scanf("%d %d",&year,&month);
 
 		    //calendar(year,month);
-		    //output();		break;
+		    //output();		
+		    break;
 		case 3:
-		    printf("날짜와 일정을 입력하시오 : ");
+		    printf("\t\t날짜와 일정을 입력하시오 : ");
 		    scanf("%s %s",day, plan);
 
 		    input(day, plan);	
-		    fflush(day);  fflush(plan);		break;
+		    fflush(stdin);		
+   	  	    break;
 		case 4:
-		    printf("반복되는 날짜와 일정 반복 년수를 입력하시오 : ");
+		    printf("\t    반복되는 날짜와 일정, 반복 년수를 입력하시오 : ");
 		    scanf("%s %s %d",re_day, re_plan, &n);
 
-		   // anniversary(re_day, re_plan, n);	
-		    //fflush(day);  fflush(plan);		break;
+		    anniversary(re_day, re_plan, n);	
+		    fflush(stdin);		
+		    break;
 		case 5:
-		    printf("월경일을 입력하시오 (월 일) : ");
-		    scanf("%s %d",Men, &Men_day);
+		    printf("\t\t월경일을 입력하시오 (날짜 주기) : ");
+		    scanf("%s %d",Men, &period);
 			    
-		    menstruation(Men, Men_day);	break;
+		    menstruation(Men, period);	
+		    fflush(stdin);					
+		    break;
 		case 6:
-		    printf("Bye Bye!\n");
+		    printf("\t\tBye Bye!\n");
 		    return 0;
 		default:
 		    break;
@@ -73,7 +75,7 @@ int main()
     }
     else // res == false
     {
-
+	return 0;
     }
  
     return 0;
