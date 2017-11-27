@@ -1,6 +1,7 @@
 #include "login.h"
+#include <string.h>
 
-bool login(int password){
-	if(password==1234) return true;
-	else return false;
+int login(char *password){
+	if(strcmp(password,"1234")==0) return 1;
+	else return 0;
 }

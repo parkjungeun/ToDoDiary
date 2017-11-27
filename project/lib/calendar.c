@@ -19,10 +19,10 @@ void calendar(int year,int month)
     int day[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     int days = 0, cnt=0; 
     int first_date = 0;
-
+    int i;
     days = ((year-1) * 365) + ((year-1) / 4) - ((year-1) / 100) + ((year-1) / 400);
     
-    for(int i = 0; i < month - 1; i++)
+    for(i = 0; i < month - 1; i++)
     {
 	if(i==1)
 	{
@@ -47,13 +47,13 @@ void calendar(int year,int month)
     first_date = days % 7;
 
     //1년 1월 1일은 월요일 (시작은 일요일부터)
-    for(int i = 0; i <= first_date; i++)
+    for(i = 0; i <= first_date; i++)
     {
 	printf("    ");
 	cnt++;
     } 
 
-    for(int i = 1; i <= day[month - 1]; i++)
+    for(i = 1; i <= day[month - 1]; i++)
     {
 	if(cnt % 7 == 0)
 	    printf("\n");

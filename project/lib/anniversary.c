@@ -22,8 +22,8 @@ void anniversary(char* day, char* plan, int num) //앞으로 몇년동안 쓸지
     {
 	int s = atoi(day);  //string -> int
 	char buf[10];
-
-	for(int i=1;i<=num;i++)
+	int i;
+	for(i=1;i<=num;i++)
 	{
 	    s+=10000;
 	    sprintf(buf, "%d", s);
