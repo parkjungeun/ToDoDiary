@@ -9,7 +9,7 @@ int main()
     char re_day[50], re_plan[50], n;	//반복되는 일정 저장할때 사용하는 변수 
     char Men[10];
     int  period;		//월경일 계산할 때 필요한 변수 
-    
+    char showPlan[50];			//저장된 일정 볼때 사용하는 변수
     res = login();
 
     if( res == 1 )
@@ -32,31 +32,31 @@ int main()
 
 	    switch(request)
 	    {
-		case 1:	
+		case 1:
 		    printf("\t\t년 월을 입력하시오 : ");
 		    scanf("%d %d", &year,&month);
-		    calendar(year, month);			
+		    calendar(year, month);
 		    break;
 		case 2:
-		    //printf("\t    일정을 보고 싶은 년도와 달을 선택하시오 : ");
-		    //scanf("%d %d",&year,&month);
+		    printf("\t    일정을 보고 싶은 년도와 달을 선택하시오 : ");
+		    scanf("%s",showPlan);
 
 		    //calendar(year,month);
-		    //output();		
+		    output(showPlan);
 		    break;
 		case 3:
 		    printf("\t\t날짜와 일정을 입력하시오 : ");
 		    scanf("%s %s",day, plan);
 
-		    input(day, plan);	
-		    fflush(stdin);		
+		    input(day, plan);
+		    fflush(stdin);
    	  	    break;
 		case 4:
 		    printf("\t    반복되는 날짜와 일정, 반복 년수를 입력하시오 : ");
 		    scanf("%s %s %d",re_day, re_plan, &n);
 
-		    anniversary(re_day, re_plan, n);	
-		    fflush(stdin);		
+		    anniversary(re_day, re_plan, n);
+		    fflush(stdin);
 		    break;
 		case 5:
 		    printf("\t\t월경일을 입력하시오 (날짜 주기) : ");

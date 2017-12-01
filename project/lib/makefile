@@ -1,5 +1,5 @@
-liblibrary.a : calendar.o menstruation.o input.o anniversary.o login.o
-	ar rv liblibrary.a calendar.o menstruation.o input.o anniversary.o login.o
+liblibrary.a : calendar.o menstruation.o input.o anniversary.o login.o output.o
+	ar rv liblibrary.a calendar.o menstruation.o input.o anniversary.o login.o output.o
 
 calendar.o : calendar.c
 	gcc -c -I../include calendar.c -o calendar.o
@@ -9,6 +9,9 @@ menstruation.o : menstruation.c
 
 input.o : input.c
 	gcc -c -I../include input.c -o input.o
+
+output.o : output.c
+	gcc -c -I../include output.c -o output.o
 
 anniversary.o : anniversary.c
 	gcc -c -I../include anniversary.c -o anniversary.o

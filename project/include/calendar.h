@@ -1,5 +1,5 @@
-#ifndef calendar_H
-#define calendar_H
+#ifndef CALENDAR_H
+#define CALENDAR_H
 
 void calendar(int year, int month);
 

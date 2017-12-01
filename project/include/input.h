@@ -1,6 +1,6 @@
-#ifdef INPUT_H
+#ifndef INPUT_H
 #define INPUT_H
 
-void input(char*, char*);
+void input(char*day, char*plan);
 
 #endif
