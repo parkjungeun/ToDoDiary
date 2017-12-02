@@ -19,3 +19,5 @@ anniversary.o : anniversary.c
 login.o : login.c
 	gcc -c -I../include login.c -o login.o
 
+clean :
+	rm *.o $(liblibrary.a)

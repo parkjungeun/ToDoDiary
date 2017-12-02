@@ -28,11 +28,14 @@ void input(char* day, char* plan)
 	close(fd);
 	printf("\t\t일정 저장 성공!\n");
 
+	printf("\n\t\t나가기 (press y) : ");
 	do
 	{
 	    fflush(stdin);
-	    printf("\n\t\t나가기 (press y) : ");
 	    scanf("%c", &ch);
+	    if(ch != 'y'){
+		printf("\n\t\t나가기 (press y) : ");
+	    }
 	}while(ch!='y');
     }
     return;

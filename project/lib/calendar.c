@@ -104,6 +104,7 @@ void calendar(int y,int m){
          }
 	 //exit q
          else if(key=='q') return;
+	 system("clear");
 	 showcalendar(year,month);
 	 printf("\n");
       }

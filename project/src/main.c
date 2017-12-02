@@ -10,10 +10,14 @@ int main()
     char Men[10];
     int  period;		//월경일 계산할 때 필요한 변수 
     char showPlan[50];			//저장된 일정 볼때 사용하는 변수
+
+    system("clear");
+
     res = login();
 
     if( res == 1 )
     {
+	system("clear");
 	do
 	{
 	    printf("\n\n");
@@ -35,10 +39,11 @@ int main()
 		case 1:
 		    printf("\t\t년 월을 입력하시오 : ");
 		    scanf("%d %d", &year,&month);
+		    system("clear");
 		    calendar(year, month);
 		    break;
 		case 2:
-		    printf("\t    일정을 보고 싶은 년도와 달을 선택하시오 : ");
+		    printf("\t    일정을 보고 싶은 날을 선택하시오 : ");
 		    scanf("%s",showPlan);
 
 		    //calendar(year,month);
@@ -66,11 +71,12 @@ int main()
 		    fflush(stdin);					
 		    break;
 		case 6:
-		    printf("\t\tBye Bye!\n");
+		    printf("\t\t\tBye Bye!\n");
 		    return 0;
 		default:
 		    break;
 	    }
+	system("clear");
 	}while ( request != 6 );
     }
     else // res == false

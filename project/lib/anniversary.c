@@ -36,11 +36,14 @@ void anniversary(char* day, char* plan, int num) //앞으로 몇년동안 쓸지
 	close(fd);
 	printf("\t\t일정 저장 성공!\n");
 
+	printf("\n\t\t나가기 (press y) : ");
 	do
 	{
 	    fflush(stdin);
-	    printf("\n\t\t나가기 (press y) : ");
 	    scanf("%c", &ch);
+	    if(ch != 'y'){
+		printf("\n\t\t나가기 (press y) : ");
+	    }
 	}while(ch!='y');
     }
     return;
