@@ -1,5 +1,5 @@
-liblibrary.a : calendar.o menstruation.o input.o anniversary.o login.o output.o
-	ar rv liblibrary.a calendar.o menstruation.o input.o anniversary.o login.o output.o
+liblibrary.a : calendar.o menstruation.o input.o anniversary.o login.o output.o move.o
+	ar rv liblibrary.a calendar.o menstruation.o input.o anniversary.o login.o output.o move.o
 
 calendar.o : calendar.c
 	gcc -c -I../include calendar.c -o calendar.o
@@ -18,6 +18,9 @@ anniversary.o : anniversary.c
 
 login.o : login.c
 	gcc -c -I../include login.c -o login.o
+
+move.o : move.c
+	gcc -c -I../include move.c -o move.o
 
 clean :
 	rm *.o $(liblibrary.a)

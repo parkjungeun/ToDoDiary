@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <unistd.h>
 
 int main()
 {
@@ -20,6 +21,7 @@ int main()
 	system("clear");
 	do
 	{
+	    move(0,0);
 	    printf("\n\n");
 	    printf("\t*-----------------------------------------------*\n");
 	    printf("\t|\t  1. Viewing calendar   \t\t|\n");
@@ -40,11 +42,13 @@ int main()
 		    printf("\t\t년 월을 입력하시오 : ");
 		    scanf("%d %d", &year,&month);
 		    system("clear");
+		    move(0,0);
 		    calendar(year, month);
 		    break;
 		case 2:
 		    printf("\t    일정을 보고 싶은 날을 선택하시오 : ");
 		    scanf("%s",showPlan);
+		    printf("%s Plans :\n",showPlan);
 
 		    //calendar(year,month);
 		    output(showPlan);
@@ -66,14 +70,25 @@ int main()
 		case 5:
 		    printf("\t\t월경일을 입력하시오 (날짜 주기) : ");
 		    scanf("%s %d",Men, &period);
-			    
+		    
 		    menstruation(Men, period);	
 		    fflush(stdin);					
 		    break;
 		case 6:
-		    printf("\t\t\tBye Bye!\n");
+		    system("clear");
+		    move(0,0);
+		    for(int i=3; i>=0; i--)
+		    {
+			move(25,10);		
+			printf("After a few Sencond.....%ds\n",i);
+			sleep(1);
+		    }
+		    printf("\n\t\t\tBye Bye!\n\n\n\n\n\n");
 		    return 0;
 		default:
+		    printf("\n\t\t  Please Enter correctly\n");
+		    sleep(1);
+		    fflush(stdin);
 		    break;
 	    }
 	system("clear");

@@ -1,7 +1,12 @@
 #include<stdio.h>
 #include "calendar.h"
+#include "move.h"
 #include "../include/kbhit.h"
 #include "../include/getch.h"
+
+void move(int x, int y){
+    printf("\033[%dd\033[%dG",y,x);
+}
 
 void showcalendar(int year,int month)
 {
@@ -71,7 +76,7 @@ void calendar(int y,int m){
    int key;
    int year=y;
    int month=m;
-
+   move(0,0);
    showcalendar(year,month);
    while(1)
    {
@@ -105,6 +110,7 @@ void calendar(int y,int m){
 	 //exit q
          else if(key=='q') return;
 	 system("clear");
+	 move(0,0);
 	 showcalendar(year,month);
 	 printf("\n");
       }
