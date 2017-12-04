@@ -1,4 +1,4 @@
-
+#include "output.h"
 #include <stdio.h>
 #include <string.h>
 
@@ -6,6 +6,7 @@
 
 //year,month,day
 void output(char *date){
+	char ch;
 	FILE *fp;
 	char str[buf];
 	fp=fopen("plan.txt","r");
@@ -28,4 +29,12 @@ void output(char *date){
 		}
 	}
 	fclose(fp);
+	//fflush(stdout);
+	printf("\n\t\t나가기 (press y) : ");
+	scanf("%c",&ch);
+	while(ch!='y'){
+		//fflush(stdout);
+		printf("\n\t\t나가기 (press y) : ");
+		scanf("%c",&ch);
+	}
 }
