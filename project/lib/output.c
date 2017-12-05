@@ -11,10 +11,10 @@ void output(char *date){
 	int cnt=0;
 	fp=fopen("plan.txt","r");
 	char readDate[9]={0,};
-	if(strlen(date)==8){
+	if(strlen(date)==4){
 		while(fgets(str,buf,fp)!=NULL){
 			//날짜부분만 readDate에 넣고 strcmp로 비교
-			strncpy(readDate,str,8);
+			strncpy(readDate,str,4);
 			if(strcmp(readDate,date)==0){
 				strcpy(saveStr[cnt],str);
 				cnt++;
@@ -37,7 +37,7 @@ void output(char *date){
 	}
 	else{
 		for(i=0;i<cnt;i++){
-			printf("\n\t\t일정 %d : %s\n",i+1,saveStr[i]);
+			printf("\t\t일정 %d : %s\n",i+1,saveStr[i]);
 		}
 	}
 
