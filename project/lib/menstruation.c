@@ -51,15 +51,17 @@ void menstruation(char* Men, int period)
 	printf("\n\t\t다음 월경 예정일 : %d년 %d월 %d일\n", year, month, day);
     }
 
-    char ch;
+    char ch[2];
     printf("\n\t\t나가기 (press y) : ");
-    do{
+    while(1)
+    {
 	fflush(stdin);
-	scanf("%c", &ch);
-	if(ch != 'y'){
+	scanf("%s", ch);
+	if(strcmp(ch, "y") == 0)
+	    break;
+	else
 	    printf("\n\t\t나가기 (press y) : ");
-	}
-    }while(ch!='y');
+    }
     
     return;
 }

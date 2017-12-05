@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "move.h"
 
 void move(int x, int y)

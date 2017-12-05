@@ -9,7 +9,6 @@ void output(char *date){
 	char str[buf];
 	char saveStr[30][buf];
 	int cnt=0;
-	char ch;
 	fp=fopen("plan.txt","r");
 	char readDate[9]={0,};
 	if(strlen(date)==8){
@@ -41,11 +40,17 @@ void output(char *date){
 			printf("\n\t\t일정 %d : %s\n",i+1,saveStr[i]);
 		}
 	}
-	 do
+
+	char ch[2];
+	printf("\n\t\t나가기 (press y) : ");
+	while(1)
         {
             fflush(stdin);
-            printf("\n\t\t나가기 (press y) : ");
-            scanf("%c", &ch);
-        }while(ch!='y');
+            scanf("%s", ch);
+	    if(strcmp(ch, "y") == 0)
+		break;
+	    else
+		printf("\n\t\t나가기 (press y) : ");
+        }
 	return;
 }

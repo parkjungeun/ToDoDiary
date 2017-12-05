@@ -1,26 +1,39 @@
-liblibrary.a : calendar.o menstruation.o input.o anniversary.o login.o output.o move.o
-	ar rv liblibrary.a calendar.o menstruation.o input.o anniversary.o login.o output.o move.o
+CC = gcc 
+OUTPUT = liblibrary.a
+OBJ = calendar.o menstruation.o input.o anniversary.o login.o output.o move.o
+ 
+$(OUTPUT) : $(OBJ) 
+	ar rv $(OUTPUT) $(OBJ) 
+%.o : %.c 
+	$(CC) -c -I../include $< -o $@ 
+clean :  
+	rm *.o $(OUTPUT)  
 
-calendar.o : calendar.c
-	gcc -c -I../include calendar.c -o calendar.o
 
-menstruation.o : menstruation.c
-	gcc -c -I../include menstruation.c -o menstruation.o
+#liblibrary.a : calendar.o menstruation.o input.o anniversary.o login.o output.o move.o
+#	ar rv liblibrary.a calendar.o menstruation.o input.o anniversary.o login.o output.o move.o
 
-input.o : input.c
-	gcc -c -I../include input.c -o input.o
+#calendar.o : calendar.c
+#	gcc -c -I../include calendar.c -o calendar.o
 
-output.o : output.c
-	gcc -c -I../include output.c -o output.o
+#menstruation.o : menstruation.c
+#	gcc -c -I../include menstruation.c -o menstruation.o
 
-anniversary.o : anniversary.c
-	gcc -c -I../include anniversary.c -o anniversary.o
+#input.o : input.c
+#	gcc -c -I../include input.c -o input.o
 
-login.o : login.c
-	gcc -c -I../include login.c -o login.o
+#output.o : output.c
+#	gcc -c -I../include output.c -o output.o
 
-move.o : move.c
-	gcc -c -I../include move.c -o move.o
+#anniversary.o : anniversary.c
+#	gcc -c -I../include anniversary.c -o anniversary.o
 
-clean :
-	rm *.o $(liblibrary.a)
+#login.o : login.c
+#	gcc -c -I../include login.c -o login.o
+
+#move.o : move.c
+#	gcc -c -I../include move.c -o move.o
+
+#clean :
+#	rm *.o $(liblibrary.a)
+

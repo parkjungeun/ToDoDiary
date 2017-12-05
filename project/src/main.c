@@ -1,5 +1,13 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
+#include "move.h"
+#include "anniversary.h"
+#include "menstruation.h"
+#include "calendar.h"
+#include "input.h"
+#include "output.h"
+#include "login.h"
 
 int main()
 {
@@ -7,7 +15,8 @@ int main()
     int res;				//로그인 성공여부 
     int year, month;			//달력의 년,월 입력받는 변수 
     char day[50], plan[50];		//일정저장할때 사용하는 변수 
-    char re_day[50], re_plan[50], n;	//반복되는 일정 저장할때 사용하는 변수 
+    char re_day[50], re_plan[50];	//반복되는 일정 저장할때 사용하는 변수 
+    int n;
     char Men[10];
     int  period;		//월경일 계산할 때 필요한 변수 
     char showPlan[50];			//저장된 일정 볼때 사용하는 변수
@@ -50,7 +59,6 @@ int main()
 		    scanf("%s",showPlan);
 		    printf("\t%s Plans :\n",showPlan);
 
-		    //calendar(year,month);
 		    output(showPlan);
 		    break;
 		case 3:
@@ -83,7 +91,7 @@ int main()
 			printf("After a few Sencond.....%ds\n",i);
 			sleep(1);
 		    }
-		    printf("\n\t\t\tBye Bye!\n\n\n\n\n\n");
+		    printf("\n\t\t\t\tBye Bye!\n\n\n\n\n\n");
 		    return 0;
 		default:
 		    printf("\n\t\t  Please Enter correctly\n");

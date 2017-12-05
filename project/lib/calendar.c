@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include <stdlib.h>
 #include "calendar.h"
 #include "move.h"
 #include "../include/kbhit.h"
