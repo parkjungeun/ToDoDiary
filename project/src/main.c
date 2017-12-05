@@ -48,7 +48,7 @@ int main()
 		case 2:
 		    printf("\t    일정을 보고 싶은 날을 선택하시오 : ");
 		    scanf("%s",showPlan);
-		    printf("%s Plans :\n",showPlan);
+		    printf("\t%s Plans :\n",showPlan);
 
 		    //calendar(year,month);
 		    output(showPlan);
